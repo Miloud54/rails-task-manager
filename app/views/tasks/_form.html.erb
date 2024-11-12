@@ -1,0 +1,20 @@
+<%= form_with model: @task do |f| %>
+  <div>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :details %>
+    <%= f.text_field :details %>
+  </div>
+
+ <% if @task.persisted? %>
+    <div>
+      <%= f.check_box :completed %>
+      <%= f.label :completed, "Completed" %>
+    </div>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
